@@ -25,7 +25,16 @@ end
 
 ####### 生成随机字符串 ######
 class String
-  def self.random(length=10)
+  def self.random length=10
     ('a'..'z').sort_by {rand}[0,length].join
   end
+end
+
+####### Hash 排序 ######
+class Hash
+	def self.sorted_hash hash
+		return hash.sort do |a,b|
+		  a.to_s <=> b.to_s                      
+		end
+	end
 end
